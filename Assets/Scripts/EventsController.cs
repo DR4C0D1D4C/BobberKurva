@@ -11,19 +11,18 @@ public class EventsController : MonoBehaviour
     [SerializeField] GameObject panelPlay;
     [SerializeField] GameObject panelInGame;
     [SerializeField] GameObject panelGameOver;
-    [SerializeField] GameObject panelGameWon;
     [Header("Other")]
-    [SerializeField] Button buttonPlay;
-    int points = 0;
+    [SerializeField] TextMeshProUGUI txt_points;
+    public int points;
     
 
     void Start()
     {
         Time.timeScale = 0;
+        points = 0;
         panelPlay.SetActive(true);
         panelInGame.SetActive(false);
         panelGameOver.SetActive(false);
-        panelGameWon.SetActive(false);
     }
 
     
@@ -32,16 +31,21 @@ public class EventsController : MonoBehaviour
         if (timeRemaning > 0)
         {
             timeRemaning -= Time.deltaTime;
+            txt_points.text = points.ToString();
         } 
         else if (timeRemaning < 0)
         {
             timeRemaning = 0;
             Time.timeScale = 0;
+            panelPlay.SetActive(false);
+            panelInGame.SetActive(false);
+            panelGameOver.SetActive(true);
         }
 
         int min = Mathf.FloorToInt(timeRemaning / 60);
         int sec = Mathf.FloorToInt(timeRemaning % 60);
         txt_timer.text = string.Format("{0:00}:{1:00}",min, sec);
+        txt_points.text = points.ToString();
     }
 
 
@@ -53,7 +57,6 @@ public class EventsController : MonoBehaviour
         panelPlay.SetActive(false);
         panelInGame.SetActive(true);
         panelGameOver.SetActive(false);
-        panelGameWon.SetActive(false);
     }
     
 }
