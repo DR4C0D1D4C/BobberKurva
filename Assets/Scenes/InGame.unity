@@ -150,6 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventsController
   timeRemaning: 120
   txt_timer: {fileID: 1277224433}
+  panelPlay: {fileID: 138117316}
+  panelInGame: {fileID: 1185756066}
+  panelGameOver: {fileID: 1980076721}
+  panelGameWon: {fileID: 654180178}
 --- !u!4 &33255244
 Transform:
   m_ObjectHideFlags: 0
@@ -530,7 +534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1185756067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1097,7 +1101,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2006439197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 33255243}
+        m_TargetAssemblyTypeName: EventsController, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2006439197
 MonoBehaviour:
   m_ObjectHideFlags: 0
