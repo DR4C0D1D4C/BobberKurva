@@ -85,6 +85,7 @@ public class EventsController : MonoBehaviour
         {
             houseList[i]._isDestination = false;
             houseList[i]._isDelivered = false;
+            houseList[i]._arrow.SetActive(false);
         }
     }
 

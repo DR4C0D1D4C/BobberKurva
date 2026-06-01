@@ -210,7 +210,7 @@ MonoBehaviour:
   _isDestination: 0
   _isDelivered: 0
   _eventsController: {fileID: 0}
-  _arrow: {fileID: 0}
+  _arrow: {fileID: 5617994697512066772}
 --- !u!1 &3116905189153582933
 GameObject:
   m_ObjectHideFlags: 0
