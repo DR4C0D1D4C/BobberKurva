@@ -12,6 +12,7 @@ public class EventsController : MonoBehaviour
     [SerializeField] GameObject panelPlay;
     [SerializeField] GameObject panelInGame;
     [SerializeField] GameObject panelGameOver;
+    [SerializeField] GameObject panelWin;
     [Header("Other")]
     [SerializeField] TextMeshProUGUI txt_points;
     public int points;
@@ -26,6 +27,7 @@ public class EventsController : MonoBehaviour
         panelPlay.SetActive(true);
         panelInGame.SetActive(false);
         panelGameOver.SetActive(false);
+        panelWin.SetActive(false);
         ResetHouses();
         AsignHouses();
     }
@@ -44,6 +46,7 @@ public class EventsController : MonoBehaviour
             panelPlay.SetActive(false);
             panelInGame.SetActive(false);
             panelGameOver.SetActive(true);
+            panelWin.SetActive(false);
         }
 
         int min = Mathf.FloorToInt(timeRemaning / 60);
@@ -60,6 +63,7 @@ public class EventsController : MonoBehaviour
         panelPlay.SetActive(false);
         panelInGame.SetActive(true);
         panelGameOver.SetActive(false);
+        panelWin.SetActive(false);
         ResetHouses();
         AsignHouses();
         player.GetComponent<CharacterController>().enabled = false;
@@ -75,7 +79,8 @@ public class EventsController : MonoBehaviour
             Time.timeScale = 0;
             panelPlay.SetActive(false);
             panelInGame.SetActive(false);
-            panelGameOver.SetActive(true);
+            panelGameOver.SetActive(false);
+            panelWin.SetActive(true);
         }
     }
 
