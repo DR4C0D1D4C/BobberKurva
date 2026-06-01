@@ -5,6 +5,7 @@ public class HouseController : MonoBehaviour
     public bool _isDestination = false;
     public bool _isDelivered = false;
     public EventsController _eventsController;
+    public GameObject _arrow;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,5 +19,6 @@ public class HouseController : MonoBehaviour
     {
         _isDelivered = true;
         _eventsController.Delivery();
+        _arrow.SetActive(false);
     }
 }

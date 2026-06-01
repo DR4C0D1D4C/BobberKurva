@@ -97,6 +97,7 @@ public class EventsController : MonoBehaviour
             if (!houseList[id]._isDestination)
             {
                 houseList[id]._isDestination = true;
+                houseList[id]._arrow.SetActive(true);
             }
             else
             {
